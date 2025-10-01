@@ -93,3 +93,24 @@ pip install -r requirements.txt
 
 # Run the development server
 uvicorn main:app --reload
+
+### 1. Backend Setup
+
+```
+
+### 1. Frontend Setup
+
+```bash
+# Navigate to the backend directory
+cd backend
+
+# Create and activate a Python virtual environment
+python -m venv venv
+source venv/bin/activate # For macOS/Linux
+# venv\Scripts\activate # For Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the development server
+uvicorn main:app --reload
