@@ -98,7 +98,7 @@ uvicorn main:app --reload
 
 ```
 
-### 1. Frontend Setup
+### 2. Frontend Setup
 
 ```bash
 # Navigate to the backend directory
