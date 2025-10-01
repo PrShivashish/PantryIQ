@@ -99,7 +99,7 @@ export default function DashboardPage() {
     try {
       // Optimized: fetch with timeout
       const controller = new AbortController()
-      const timeoutId = setTimeout(() => controller.abort(), 60000) // **FIXED: Increased to 60 second timeout**
+      const timeoutId = setTimeout(() => controller.abort(), 60000) // **(60s Timeout)**
       
       const response = await fetch(`${apiUrl}/api/recipes/search?limit=12`, { 
         signal: controller.signal,
@@ -180,7 +180,7 @@ export default function DashboardPage() {
         if (ingredientSearchAbortRef.current) {
           ingredientSearchAbortRef.current.abort()
         }
-      }, 60000) // **FIXED: Increased to 60 second timeout**
+      }, 60000) // **(60s Timeout)**
       
       const recipesResponse = await fetch(`${apiUrl}/api/recipes/suggest`, {
         method: 'POST',
@@ -327,6 +327,7 @@ export default function DashboardPage() {
         <div className="text-center">
           <p className="text-lg">Loading your recipe dashboard...</p>
         </div>
+        
       </div>
     )
   }
@@ -389,7 +390,6 @@ export default function DashboardPage() {
             <Button onClick={searchRecipesByIngredients} disabled={searching} className="min-w-[140px]">
               {searching ? '🔍 Searching...' : '🔍 Find Recipes'}
             </Button>
-            
           </div>
           
           <div className="flex gap-2">
